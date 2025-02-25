@@ -12,15 +12,32 @@ public class Alumno extends Usuario {
 
     private Map<Asignatura, Integer> notas;
 
+    /**
+     * Constructor de la clase Alumno.
+     *
+     * @param nombre El nombre del alumno.
+     * @param email  El correo electrónico del alumno.
+     */
     public Alumno(String nombre, String email) {
         super(nombre, email);
         this.notas = new HashMap<>();
     }
 
+    /**
+     * Obtiene las notas del alumno.
+     *
+     * @return Las notas del alumno.
+     */
     public Map<Asignatura, Integer> getNotas() {
         return new HashMap<>(notas);
     }
 
+    /**
+     * Asigna una nota al alumno en una asignatura.
+     *
+     * @param asignatura La asignatura.
+     * @param nota       La nota.
+     */
     protected void asignarNota(Asignatura asignatura, int nota) {
         if (getAsignaturas().contains(asignatura)) {
             notas.put(asignatura, nota);
@@ -29,6 +46,9 @@ public class Alumno extends Usuario {
         }
     }
 
+    /**
+     * Muestra las notas del alumno.
+     */
     public void mostrarNotas() {
         System.out.println("Notas del alumno " + nombre + ":");
         for (Map.Entry<Asignatura, Integer> entry : notas.entrySet()) {
@@ -36,8 +56,13 @@ public class Alumno extends Usuario {
         }
     }
 
+    /**
+     * Obtiene la nota del alumno en una asignatura.
+     *
+     * @param asignatura La asignatura.
+     * @return La nota del alumno en la asignatura, o -1 si el alumno no está inscrito en la asignatura.
+     */
     public int obtenerNota(Asignatura asignatura) {
         return notas.getOrDefault(asignatura, -1);
     }
-
 }
