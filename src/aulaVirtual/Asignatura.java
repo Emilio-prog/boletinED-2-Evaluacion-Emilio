@@ -31,8 +31,13 @@ public class Asignatura {
     }
 
     public void eliminarAlumno(Alumno alumno) {
-        for (Alumno a : this.alumnos) {
+        for (Alumno a: this.alumnos) {
             if (a.getNombre().equals(alumno.nombre)) alumnos.remove(a);
         }
+    }
+
+    // Nuevo metodo para obtener la lista de alumnos
+    public List<Alumno> getAlumnos() {
+        return alumnos;
     }
 }
