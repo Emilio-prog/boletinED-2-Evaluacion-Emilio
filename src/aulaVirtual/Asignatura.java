@@ -40,4 +40,15 @@ public class Asignatura {
     public List<Alumno> getAlumnos() {
         return alumnos;
     }
+
+    public void imprimirDatosAlumnos() {
+        if (alumnos.isEmpty()) {
+            System.out.println("No hay alumnos inscritos en esta asignatura.");
+        } else {
+            System.out.println("Alumnos inscritos en " + nombre + ":");
+            for (Alumno alumno : alumnos) {
+                System.out.println("- " + alumno.getNombre() + " (" + alumno.getEmail() + ")");
+            }
+        }
+    }
 }

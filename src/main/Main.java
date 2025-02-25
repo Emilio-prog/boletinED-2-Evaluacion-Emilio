@@ -20,9 +20,12 @@ public class Main {
         Alumno alumno1 = new Alumno("María Pérez", "maria@correo.com");
         alumno1.inscribirAsignatura(matematicas);
         alumno1.inscribirAsignatura(programacion);
+        matematicas.agreagarAlumno(alumno1); // Añadir alumno1 a la asignatura matematicas
+        programacion.agreagarAlumno(alumno1); // Añadir alumno1 a la asignatura programacion
 
         Alumno alumno2 = new Alumno("Pedro Martínez", "pedro@correo.com");
         alumno2.inscribirAsignatura(programacion);
+        programacion.agreagarAlumno(alumno2); // Añadir alumno2 a la asignatura programacion
 
         // El profesor califica a los alumnos
         profesor1.calificarAlumno(alumno1, matematicas, 85);
@@ -32,5 +35,13 @@ public class Main {
         // Mostrar notas de los alumnos
         alumno1.mostrarNotas();
         alumno2.mostrarNotas();
+
+        // Mostrar alumnos de la asignatura de matemáticas
+        matematicas.imprimirDatosAlumnos();
+
+        // Mostrar alumnos de la asignatura de programación
+        programacion.imprimirDatosAlumnos();
+
     }
+
 }
